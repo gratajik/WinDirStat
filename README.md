@@ -4,6 +4,10 @@
 
 * Copyright © 2003-2005 Bernhard Seifert (bseifert@users.sourceforge.net)
 * Copyright © 2004-2016 WinDirStat team (windirstat.info)
+* Copyright © 2018      Greg Ratajik
+
+
+@@NOTE: 11/22/2018 - I am playing around with updating this app. I have so far just got it compiling and running under VS2017.  -Greg
 
 The application itself is distributed under the terms of the [GPL v2](windirstat/res/license.txt), but parts of the source code are also available
 under more lenient license terms.
