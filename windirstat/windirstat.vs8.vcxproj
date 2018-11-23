@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>windirstat</ProjectName>
+    <ProjectGuid>{BD11B94C-6594-4477-9FDF-2E24447D1F14}</ProjectGuid>
+    <RootNamespace>windirstat</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26730.12</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\build\</OutDir>
+    <IntDir>..\intermediate\vs2005_$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\build\</OutDir>
+    <IntDir>..\intermediate\vs2005_$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\build\</OutDir>
+    <IntDir>..\intermediate\vs2005_$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\build\</OutDir>
+    <IntDir>..\intermediate\vs2005_$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)common\buildnumber.h" "$(SolutionDir)common\buildinc.cmd" "$(SolutionDir)common"</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;VTRACE_TO_CONSOLE=1;VTRACE_DETAIL=2;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <ProgramDataBaseFileName>$(OutDir)wds32D.pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>/nologo /l409 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_DEBUG;VTRACE_TO_CONSOLE=1;VTRACE_DETAIL=2;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;..;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/delayload:psapi.dll /pdbaltpath:%_PDB% %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>htmlhelp.lib;psapi.lib;delayimp.lib;..\..\..\build\luajit2_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)wds32D.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)common\buildnumber.h" "$(SolutionDir)common\buildinc.cmd" "$(SolutionDir)common"</Command>
+    </PreBuildEvent>
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;VTRACE_TO_CONSOLE=1;VTRACE_DETAIL=2;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <ProgramDataBaseFileName>$(OutDir)wds64D.pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>/nologo /l409 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_DEBUG;VTRACE_TO_CONSOLE=1;VTRACE_DETAIL=2;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;..;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/delayload:psapi.dll /pdbaltpath:%_PDB% %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>htmlhelp.lib;psapi.lib;delayimp.lib;..\..\..\build\luajit2_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)wds64D.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)common\buildnumber.h" "$(SolutionDir)common\buildinc.cmd" "$(SolutionDir)common"</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/Oi /Ot %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <ProgramDataBaseFileName>$(OutDir)wds32.pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>/nologo /l409 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>NDEBUG;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;..;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/delayload:psapi.dll /pdbaltpath:%_PDB% /release %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>htmlhelp.lib;psapi.lib;delayimp.lib;..\..\..\build\luajit2_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)wds32.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)common\buildnumber.h" "$(SolutionDir)common\buildinc.cmd" "$(SolutionDir)common"</Command>
+    </PreBuildEvent>
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Oi /Ot %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <ProgramDataBaseFileName>$(OutDir)wds64.pdb</ProgramDataBaseFileName>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>/nologo /l409 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>NDEBUG;WINVER=0x0500;HAVE_WIN7_SDK=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;.;..\common;Controls;Dialogs;..\3rdparty\lua\src;..;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/delayload:psapi.dll /pdbaltpath:%_PDB% /release %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>htmlhelp.lib;psapi.lib;delayimp.lib;..\..\..\build\luajit2_$(Platform).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)wds64.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="..\CHANGELOG.txt" />
+    <Text Include="..\CONTRIBUTORS.txt" />
+    <Text Include="..\TESTPLAN.txt" />
+    <Text Include="..\TODO.txt" />
+    <Text Include="res\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\buildnumber.h" />
+    <ClInclude Include="..\common\commonhelpers.h" />
+    <ClInclude Include="..\common\common_rsrcstr.h" />
+    <ClInclude Include="..\common\cotaskmem.h" />
+    <ClInclude Include="..\common\hgtip.h" />
+    <ClInclude Include="..\common\mdexceptions.h" />
+    <ClInclude Include="..\common\platform.h" />
+    <ClInclude Include="..\common\SimpleIni.h" />
+    <ClInclude Include="..\common\tracer.h" />
+    <ClInclude Include="..\common\version.h" />
+    <ClInclude Include="..\common\wds_constants.h" />
+    <ClInclude Include="Controls\ColorButton.h" />
+    <ClInclude Include="Controls\graphview.h" />
+    <ClInclude Include="Controls\myimagelist.h" />
+    <ClInclude Include="Controls\ownerdrawnlistcontrol.h" />
+    <ClInclude Include="Controls\pacman.h" />
+    <ClInclude Include="Controls\sortinglistcontrol.h" />
+    <ClInclude Include="Controls\TreeListControl.h" />
+    <ClInclude Include="Controls\treemap.h" />
+    <ClInclude Include="Controls\typeview.h" />
+    <ClInclude Include="Controls\xyslider.h" />
+    <ClInclude Include="Dialogs\AboutDlg.h" />
+    <ClInclude Include="Dialogs\DeleteWarningDlg.h" />
+    <ClInclude Include="Dialogs\SelectDrivesDlg.h" />
+    <ClInclude Include="dirstatdoc.h" />
+    <ClInclude Include="dirstatview.h" />
+    <ClInclude Include="FileFindWDS.h" />
+    <ClInclude Include="getosplatformstring.h" />
+    <ClInclude Include="globalhelpers.h" />
+    <ClInclude Include="helpmap.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="layout.h" />
+    <ClInclude Include="mainframe.h" />
+    <ClInclude Include="ModalApiShuttle.h" />
+    <ClInclude Include="ModalShellApi.h" />
+    <ClInclude Include="mountpoints.h" />
+    <ClInclude Include="options.h" />
+    <ClInclude Include="osspecific.h" />
+    <ClInclude Include="PageCleanups.h" />
+    <ClInclude Include="PageGeneral.h" />
+    <ClInclude Include="PageTreelist.h" />
+    <ClInclude Include="PageTreemap.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="selectobject.h" />
+    <ClInclude Include="set.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="WDS_Lua_C.h" />
+    <ClInclude Include="windirstat.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\common\BUILD" />
+    <None Include="..\common\buildinc.cmd" />
+    <None Include="..\common\build_luajit.cmd" />
+    <None Include="..\common\produce_vsprojects.cmd" />
+    <None Include="..\common\setvcvars.cmd" />
+    <None Include="..\premake4.lua" />
+    <None Include="..\README.md" />
+    <None Include="res\linkhand.cur" />
+    <None Include="res\windirstat.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\icon2.ico" />
+    <Image Include="res\junctionpoint.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\windirstat.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="windirstat.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\commonhelpers.cpp" />
+    <ClCompile Include="..\common\platform.cpp" />
+    <ClCompile Include="Controls\ColorButton.cpp" />
+    <ClCompile Include="Controls\graphview.cpp" />
+    <ClCompile Include="Controls\myimagelist.cpp" />
+    <ClCompile Include="Controls\ownerdrawnlistcontrol.cpp" />
+    <ClCompile Include="Controls\pacman.cpp" />
+    <ClCompile Include="Controls\sortinglistcontrol.cpp" />
+    <ClCompile Include="Controls\TreeListControl.cpp" />
+    <ClCompile Include="Controls\treemap.cpp" />
+    <ClCompile Include="Controls\typeview.cpp" />
+    <ClCompile Include="Controls\xyslider.cpp" />
+    <ClCompile Include="Dialogs\aboutdlg.cpp" />
+    <ClCompile Include="Dialogs\DeleteWarningDlg.cpp" />
+    <ClCompile Include="Dialogs\SelectDrivesDlg.cpp" />
+    <ClCompile Include="dirstatdoc.cpp" />
+    <ClCompile Include="dirstatview.cpp" />
+    <ClCompile Include="FileFindWDS.cpp" />
+    <ClCompile Include="getosplatformstring.cpp" />
+    <ClCompile Include="globalhelpers.cpp" />
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="layout.cpp" />
+    <ClCompile Include="mainframe.cpp" />
+    <ClCompile Include="ModalApiShuttle.cpp" />
+    <ClCompile Include="ModalShellApi.cpp" />
+    <ClCompile Include="mountpoints.cpp" />
+    <ClCompile Include="options.cpp" />
+    <ClCompile Include="osspecific.cpp" />
+    <ClCompile Include="PageCleanups.cpp" />
+    <ClCompile Include="PageGeneral.cpp" />
+    <ClCompile Include="PageTreelist.cpp" />
+    <ClCompile Include="PageTreemap.cpp" />
+    <ClCompile Include="WDS_Lua_C.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="windirstat.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rdparty\lua\src\luajit2.vs8.vcxproj">
+      <Project>{9f35c2bb-df1e-400a-a829-ae34e1c91a70}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
