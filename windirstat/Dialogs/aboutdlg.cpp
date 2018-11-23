@@ -271,7 +271,7 @@ CString CAboutDlg::GetAppVersion()
 CString CAboutDlg::GetDevelList()
 {
     CString retval;
-    using wds::authors;
+  /*  using wds::authors;
     using wds::contact_t;
     
     for(size_t i = 0; authors[i].name; i++)
@@ -293,14 +293,14 @@ CString CAboutDlg::GetDevelList()
                 retval += tmp;
             }
         }
-    }
+    }*/
     return retval;
 }
 
 CString CAboutDlg::GetTranslatorList()
 {
     CString retval;
-    using wds::translators;
+   /* using wds::translators;
     using wds::translator_t;
 
     for(size_t i = 0; translators[i].id && translators[i].lngNative; i++)
@@ -321,7 +321,7 @@ CString CAboutDlg::GetTranslatorList()
                 else if(c.weburl)
                     tmp2.Format(_T("%s\n%s\n"), c.name, c.weburl);
                 else
-                    tmp2.Format(_T("%s\n"), c.name);
+                    tmp2.Format(_T("%s\n"), c.name); 
                 if(!tmp2.IsEmpty())
                     tmp += tmp2;
             }
@@ -331,7 +331,7 @@ CString CAboutDlg::GetTranslatorList()
                 retval += tmp;
             }
         }
-    }
+    }*/
     return retval;
 }
 
